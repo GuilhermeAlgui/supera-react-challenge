@@ -1,0 +1,82 @@
+.Landing-body {
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+.header-search {
+	height: 50px;
+	max-width: 450px;
+	border-width: 0;
+}
+.header-span {
+	height: 50px;
+	max-width: 500px;
+	background-color: #fff;
+	display: flex;
+}
+
+.header-seach-icon:hover {
+	cursor: pointer;
+}
+
+.landing-container {
+	display: flex;
+	flex: 1;
+}
+.landing-filters {
+	display: flex;
+	flex-direction: column;
+	max-width: 250px;
+	background-color: rgb(224, 102, 102);
+	flex: 1;
+}
+
+.landing-filters-orders {
+	position: sticky;
+	top: 200px;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.landing-filters-orders button {
+	border-width: 0;
+	flex: 1;
+	margin: 5px 0 5px 0;
+	padding: 2px 0 2px 0;
+	background-color: rgb(223, 130, 130);
+}
+
+.landing-order-options {
+	border: 1px solid black;
+	border-right: 0.5px solid black;
+	margin: 0 5px 0 5px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+.landing-filter-options {
+	border: 1px solid black;
+	border-right: 0.5px solid black;
+	margin: 0 5px 0 5px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.landing-filter-options h2 {
+	align-self: center;
+}
+.landing-products {
+	flex: 1;
+	background-color: #eee;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding-top: 10px;
+    padding-left: 10px;
+    grid-gap: 10px;
+}

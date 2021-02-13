@@ -1,0 +1,15 @@
+.game-container{
+    cursor: pointer;
+    border: 1px gray solid;
+    border-radius: 40px;
+    background-color: #FFF;
+    padding: 10px;
+}
+.game-container .game-name{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.game-container .game-price{
+    font-size: 24px;
+}

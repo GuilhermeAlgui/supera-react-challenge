@@ -1,0 +1,62 @@
+.header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100vw;
+    height: 120px;
+    background-color: rgb(224, 102, 102);
+    padding: 0 40px 0 40px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+.header-container .header-title{
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+.header-container .header-user-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-user-container .header-user-name{
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+}
+
+.header-user-container .header-items{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-items .header-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+.header-cart img{
+    height: 42px;
+    width: 42px;
+}
+.header-cart .header-cart-text{
+    font-size: 18px;
+    line-height: 20px;
+    
+}
+.header-items .header-cart-valor{
+    font-size: 22px;
+}
