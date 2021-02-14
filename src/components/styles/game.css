@@ -16,11 +16,10 @@
 .game-container .game-name {
 	font-size: 18px;
 	font-weight: normal;
-	color:black
+	color: black;
 }
 
 .game-container .game-price {
 	font-size: 24px;
-	color:black
-
+	color: black;
 }

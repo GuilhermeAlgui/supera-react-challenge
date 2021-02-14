@@ -25,17 +25,14 @@ function Landing() {
 	function handleFilter(minPrice: number, maxPrice: number) {
 		const p = filteredProducts.filter((produto) => {
 			if (produto.price > minPrice && produto.price < maxPrice) return produto;
-			return null
+			return null;
 		});
 		setProdutos([...p]);
 	}
 
 	return (
 		<div className='Landing-body'>
-			<Header empresa='Supera'>
-
-				
-			</Header>
+			<Header empresa='Supera'></Header>
 			<div className='landing-container'>
 				<SideBar handlePrice={handleFilter} handleSorting={handleSorting} />
 				<div className='landing-products'>

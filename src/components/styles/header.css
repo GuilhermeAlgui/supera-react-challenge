@@ -3,7 +3,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	min-width: 100vw;
+	max-width: 100vw;
 	height: 80px;
 	background-color: #e96b00;
 	padding: 0 40px 0 40px;
@@ -12,13 +12,17 @@
 	left: 0;
 	right: 0;
 	z-index: 10;
-	flex:1
+	height: 80px;
 }
 .header-container .header-title {
+	text-decoration: none;
 	font-size: 32px;
 	font-weight: 700;
 	font-style: italic;
 	color: #efefef;
+	background-color: blueviolet;
+	padding: 10px;
+	border-radius: 20px;
 }
 
 .header-container .header-user-container {
@@ -40,6 +44,7 @@
 .header-user-container .header-items {
 	display: flex;
 	flex-direction: column;
+	margin-left: 20px;
 }
 
 .header-items .header-cart {
@@ -53,6 +58,7 @@
 	width: 42px;
 }
 .header-cart .header-cart-text {
+	margin-left: 10px;
 	font-size: 18px;
 	line-height: 20px;
 	color: #efefef;

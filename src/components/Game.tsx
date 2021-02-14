@@ -13,11 +13,11 @@ function Game(props: {
 
 	console.log(gameId);
 	return (
-		<Link to={`/produto/${gameId}`}  className='game-container'>
+		<Link to={`/produto/${gameId}`} className='game-container'>
 			<img src={`${process.env.PUBLIC_URL}/assets/${image}`} alt={gameName} />
 			<p className='game-name'>{gameName}</p>
-			<p className='game-price'>R${price}</p>
-		</Link >
+			<p className='game-price'>R${price.toFixed(2)}</p>
+		</Link>
 	);
 }
 

@@ -29,7 +29,7 @@ function LandingBusca() {
 	function handleFilter(minPrice: number, maxPrice: number) {
 		const p = filteredProducts.filter((produto) => {
 			if (produto.price > minPrice && produto.price < maxPrice) return produto;
-			return null
+			return null;
 		});
 		setProdutos([...p]);
 	}
@@ -38,7 +38,7 @@ function LandingBusca() {
 		const p = products.filter((produto) => {
 			if (produto.name.toLowerCase().includes(params.pesquisa.toLowerCase()))
 				return produto;
-			return null
+			return null;
 		});
 		setFilteredProducts([...p]);
 		setProdutos([...p]);

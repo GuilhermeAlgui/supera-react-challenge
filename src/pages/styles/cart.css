@@ -1,0 +1,137 @@
+.cart-body {
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+.cart-container {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 30px 0 30px;
+}
+
+.cart-container .cart-title {
+	align-self: flex-start;
+	margin: 20px 0 20px 0;
+}
+
+.cart-options {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.cart-container .cart-product-list {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	border-radius: 30px;
+	background-color: #fff;
+}
+.cart-product-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	align-items: center;
+	border-radius: 30px;
+	grid-gap: 10px;
+	padding: 10px;
+}
+
+.cart-product-container img {
+	width: 128px;
+	height: 128px;
+	border-radius: 30px;
+}
+
+.cart-product-name {
+	color: #000;
+	font-size: 24px;
+}
+
+.cart-product-buttons {
+	margin: 0 20px 0 20px;
+	display: flex;
+	align-items: center;
+}
+
+.cart-product-buttons button {
+	font-size: 20px;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+}
+.cart-product-buttons p {
+	margin: 0 10px 0 10px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.cart-product-price {
+	text-align: center;
+	font-size: 16px;
+	margin-right: 20px;
+}
+.cart-summary {
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-summary h2 {
+	margin-bottom: 10px;
+}
+
+.cart-summary-valor {
+	font-size: 16px;
+}
+
+.cart-summary-valor-text {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.cart-summary-frete {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.cart-summary-frete-text {
+	font-size: 24px;
+}
+
+.cart-summary-total-text {
+	font-size: 26px;
+	margin-bottom: 10px;
+}
+
+.cart-summary-total {
+	font-size: 16px;
+}
+
+.cart-summary-buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+}
+
+.cart-summary button {
+	background-color: #e96b00;
+	color: #fff;
+	border: 0;
+	border-radius: 20px;
+	font-size: 24px;
+	padding: 10px;
+}
+
+.cart-summary button:hover {
+	background-color: #aa5e1b;
+}
+
+.cart-empty {
+	text-decoration: none;
+	color: black;
+	background-color: #eee;
+}

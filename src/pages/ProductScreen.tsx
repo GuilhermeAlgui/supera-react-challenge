@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import Game from '../components/Game';
 import Header from '../components/Header';
 import products from '../products.json';
+import order from '../functions/order';
 
 import './styles/product.css';
 
@@ -22,10 +23,23 @@ function ProductScreen() {
 	const dispatch = useDispatch();
 	const params = useParams<ProductParams>();
 	const [produto, setProduto] = useState<ProductProps>();
+	const [produtosPopulares, setProdutosPopulares] = useState(products);
 	const history = useHistory();
+
+	function handleSorting(field: string, asc: boolean) {
+		const newProdutos = [...products];
+		for (let i = 0; i < newProdutos.length; i++) {
+			if (newProdutos[i].id === parseInt(params.id)) newProdutos.splice(i, 1);
+		}
+
+		const sortedProducts = order(newProdutos, field, asc);
+		sortedProducts.length = 5;
+		setProdutosPopulares([...sortedProducts]);
+	}
 
 	function addProduct() {
 		dispatch({ type: 'ADD_CART', product: produto });
+		history.push('/carrinho');
 	}
 
 	useEffect(() => {
@@ -37,7 +51,8 @@ function ProductScreen() {
 		else {
 			history.replace('/');
 		}
-		console.log(p);
+		handleSorting('score', false);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [params.id, history]);
 
 	return (
@@ -59,19 +74,19 @@ function ProductScreen() {
 			</div>
 			<div className='another-products-container'>
 				<h4>Outros Produtos que pode gostar</h4>
-				<div className="another-products">
-					{products.map((product) => {
-                        if(product.score > 100 && product.id!== parseInt(params.id))
-						return (
-							<Game
-								gameName={product.name}
-								gameId={product.id}
-								price={product.price}
-								score={product.score}
-								image={product.image}
-							/>
-						);
-                        else return null    
+				<div className='another-products'>
+					{produtosPopulares.map((product) => {
+						if (product.score > 100 && product.id !== parseInt(params.id))
+							return (
+								<Game
+									gameName={product.name}
+									gameId={product.id}
+									price={product.price}
+									score={product.score}
+									image={product.image}
+								/>
+							);
+						else return null;
 					})}
 				</div>
 			</div>

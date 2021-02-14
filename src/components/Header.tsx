@@ -54,7 +54,9 @@ function Header({ empresa }: HeaderProps) {
 
 	return (
 		<div className='header-container'>
-			<p className='header-title'>{empresa}</p>
+			<Link to='/' className='header-title'>
+				{empresa}
+			</Link>
 
 			<span className='header-span'>
 				<input
@@ -77,7 +79,7 @@ function Header({ empresa }: HeaderProps) {
 					Olá{'\n'}usuário{' '}
 				</p>
 				<div className='header-items'>
-					<Link to='/' className='header-cart'>
+					<Link to='/carrinho' className='header-cart'>
 						<img
 							src={`${process.env.PUBLIC_URL}/assets/cart-icon.svg`}
 							alt='cart'
@@ -85,7 +87,7 @@ function Header({ empresa }: HeaderProps) {
 						<p className='header-cart-text'>Ver carrinho</p>
 					</Link>
 					<p className='header-cart-valor'>
-						Valor Total:R${(total + frete).toFixed(2)}
+						Valor Total: R${(total + frete).toFixed(2)}
 					</p>
 				</div>
 			</div>
