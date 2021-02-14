@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/game.css';
 
 function Game(props: {
@@ -12,11 +13,11 @@ function Game(props: {
 
 	console.log(gameId);
 	return (
-		<div className='game-container'>
+		<Link to={`/produto/${gameId}`}  className='game-container'>
 			<img src={`${process.env.PUBLIC_URL}/assets/${image}`} alt={gameName} />
 			<p className='game-name'>{gameName}</p>
 			<p className='game-price'>R${price}</p>
-		</div>
+		</Link >
 	);
 }
 

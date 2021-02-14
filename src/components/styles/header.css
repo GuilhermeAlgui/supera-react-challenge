@@ -12,6 +12,7 @@
 	left: 0;
 	right: 0;
 	z-index: 10;
+	flex:1
 }
 .header-container .header-title {
 	font-size: 32px;

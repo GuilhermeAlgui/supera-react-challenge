@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
 
 import Game from '../components/Game';
 import Header from '../components/Header';
@@ -13,44 +11,33 @@ import SideBar from '../components/Sidebar';
 
 function Landing() {
 	console.log(products);
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const [filteredProducts, setFilteredProducts] = useState(products);
+
 	const [produtos, setProdutos] = useState(products);
-	const [pesquisa, setPesquisa] = useState('');
 
 	function handleSorting(field: string, asc: boolean) {
 		const sortedProducts = order(produtos, field, asc);
 		setProdutos([...sortedProducts]);
 		console.log(produtos);
 	}
-	
-	function handleFilter(minPrice: number,maxPrice:number) {
-		const p = produtos.filter((produto) => {
-			if (produto.price > minPrice && produto.price < maxPrice) return produto;
-		});
-		setProdutos([...p])
-	}
 
+	function handleFilter(minPrice: number, maxPrice: number) {
+		const p = filteredProducts.filter((produto) => {
+			if (produto.price > minPrice && produto.price < maxPrice) return produto;
+			return null
+		});
+		setProdutos([...p]);
+	}
 
 	return (
 		<div className='Landing-body'>
 			<Header empresa='Supera'>
-				<span className='header-span'>
-					<input
-						value={pesquisa}
-						onChange={(e) => {
-							setPesquisa(e.target.value);
-						}}
-						className='header-search'
-						type='text'
-						name=''
-						id=''
-					/>
-					<Link to={pesquisa.length > 0 ? `/busca/${pesquisa}` : '/'}>
-						<FiSearch size={50} className='header-seach-icon' />
-					</Link>
-				</span>
+
+				
 			</Header>
 			<div className='landing-container'>
-				<SideBar handlePrice={handleFilter} handleSorting={handleSorting}/>
+				<SideBar handlePrice={handleFilter} handleSorting={handleSorting} />
 				<div className='landing-products'>
 					{produtos.map((product) => {
 						return (
